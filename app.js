@@ -69,7 +69,7 @@ app.post('/api/v1/tours', (req, res) => {
   );
 });
 
-app.patch('/api/v1/tours/:id', (req, res) => {
+app.delete('/api/v1/tours/:id', (req, res) => {
   const id = req.params.id * 1;
 
   if (id > tours.length) {
@@ -79,11 +79,9 @@ app.patch('/api/v1/tours/:id', (req, res) => {
     });
   }
 
-  res.status(200).json({
+  res.status(204).json({
     status: 'success',
-    data: {
-      tour: '<updated tour here.....>',
-    },
+    data: null,
   });
 });
 
